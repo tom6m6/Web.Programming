@@ -1,0 +1,41 @@
+CREATE DATABASE webproject;
+DROP TABLE IF EXISTS t_eastmoney;
+CREATE TABLE t_eastmoney (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    intro TEXT NOT NULL,
+    source VARCHAR(255) NOT NULL,
+    create_time DATETIME NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS t_sina;
+CREATE TABLE t_sina (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    intro TEXT,
+    keywords VARCHAR(255),
+    source VARCHAR(255) NOT NULL,
+    create_time DATETIME NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS t_wy;
+CREATE TABLE t_wy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    comment_total INT,
+    keywords TEXT,
+    source VARCHAR(255) NOT NULL,
+    create_time DATETIME NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS t_user;
+CREATE TABLE t_user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    nickname VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(255),
+    address VARCHAR(255),
+    feedback VARCHAR(512),
+    password VARCHAR(255) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

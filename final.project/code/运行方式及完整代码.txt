@@ -1,0 +1,18 @@
+运行方式：
+数据库：
+安装MySQL，通过createTable.sql中的语句创建表。然后在/router和/spider目录下面修改数据库密码为您的密码。
+如果是MySQL8.0,可能会报错：Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+解决方法：在MySQL终端root登录后输入：ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test1234';
+
+后端：
+在项目目录下面 npm install 安装依赖
+然后node index.js
+
+前端：
+另起一个终端
+在/vue目录下面 npm install 安装依赖
+然后 npm run serve
+进入localhost:8080/index 访问初始页
+
+爬虫：
+因为是动态爬虫，只需要在前端点击对应的按钮就能即时爬取最新的内容
